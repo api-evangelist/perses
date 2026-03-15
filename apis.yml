@@ -1,0 +1,15 @@
+name: Perses
+description: An open-source monitoring and dashboarding tool designed as a modern
+  alternative to Grafana, providing a simple and intuitive interface for visualizing
+  time-series data with a focus on performance and extensibility.
+url: https://perses.dev
+tags:
+- Monitoring
+- Dashboards
+- Visualization
+- Time Series
+- Open Source
+created: '2025'
+modified: '2025'
+apis: []
+common: []
