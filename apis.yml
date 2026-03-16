@@ -1,15 +1,47 @@
+aid: perses
 name: Perses
-description: An open-source monitoring and dashboarding tool designed as a modern
-  alternative to Grafana, providing a simple and intuitive interface for visualizing
-  time-series data with a focus on performance and extensibility.
-url: https://perses.dev
+description: >-
+  Perses is an open-source monitoring and dashboarding tool designed as a
+  modern alternative for visualizing time-series data with a focus on
+  performance and extensibility. It is a CNCF sandbox project.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Monitoring
-- Dashboards
-- Visualization
-- Time Series
-- Open Source
-created: '2025'
-modified: '2025'
-apis: []
-common: []
+  - Monitoring
+  - Dashboards
+  - Visualization
+  - Time Series
+  - Open Source
+  - CNCF
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/perses/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: perses:perses
+    name: Perses API
+    description: >-
+      Open-source monitoring and dashboarding tool with REST API for managing
+      dashboards, datasources, and projects.
+    humanURL: https://perses.dev/
+    tags:
+      - Monitoring
+      - Dashboards
+    properties:
+      - type: Documentation
+        url: https://perses.dev/docs/
+      - type: GitHub Organization
+        url: https://github.com/perses/perses
+common:
+  - type: Website
+    url: https://perses.dev/
+  - type: Documentation
+    url: https://perses.dev/docs/
+  - type: GitHub Organization
+    url: https://github.com/perses/perses
+  - type: Community
+    url: https://perses.dev/community/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
