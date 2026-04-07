@@ -7,12 +7,12 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Monitoring
-  - Dashboards
-  - Visualization
-  - Time Series
-  - Open Source
   - CNCF
+  - Dashboards
+  - Monitoring
+  - Open Source
+  - Time Series
+  - Visualization
 url: >-
   https://raw.githubusercontent.com/api-evangelist/perses/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -26,8 +26,8 @@ apis:
       dashboards, datasources, and projects.
     humanURL: https://perses.dev/
     tags:
-      - Monitoring
       - Dashboards
+      - Monitoring
     properties:
       - type: Documentation
         url: https://perses.dev/docs/
