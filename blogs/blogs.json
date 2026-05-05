@@ -1,0 +1,13 @@
+{
+  "repo": "perses",
+  "feeds": [
+    {
+      "source": "https://perses.dev/blog/",
+      "feed_url": "https://perses.dev/feed_rss_created.xml",
+      "saved": 6,
+      "title": "Perses"
+    }
+  ],
+  "post_count": 6,
+  "fetched": "2026-05-03T23:33:45Z"
+}
