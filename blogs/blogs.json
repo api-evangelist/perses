@@ -3,11 +3,12 @@
   "feeds": [
     {
       "source": "https://perses.dev/blog/",
-      "feed_url": "https://perses.dev/feed_rss_created.xml",
-      "saved": 6,
-      "title": "Perses"
+      "feed_url": "",
+      "title": "",
+      "saved": 0,
+      "error": "no_feed"
     }
   ],
   "post_count": 6,
-  "fetched": "2026-05-03T23:33:45Z"
+  "fetched": "2026-05-09T20:17:51Z"
 }
