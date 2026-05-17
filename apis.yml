@@ -40,7 +40,7 @@ apis:
     properties:
       - type: Documentation
         url: https://perses.dev/perses/docs/
-      - type: API Reference
+      - type: APIReference
         url: https://perses.dev/perses/docs/api/
       - type: GitHub
         url: https://github.com/perses/perses
@@ -49,9 +49,9 @@ common:
     url: https://perses.dev/
   - type: Documentation
     url: https://perses.dev/perses/docs/
-  - type: API Reference
+  - type: APIReference
     url: https://perses.dev/perses/docs/api/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/perses
   - type: GitHub
     url: https://github.com/perses/perses
