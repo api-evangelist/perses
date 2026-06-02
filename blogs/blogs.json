@@ -2,12 +2,17 @@
   "repo": "perses",
   "feeds": [
     {
-      "source": "https://perses.dev/blog/",
+      "source": "https://perses.dev/feed_rss_created.xml",
       "feed_url": "https://perses.dev/feed_rss_created.xml",
-      "title": "Perses",
-      "saved": 5
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://perses.dev/community/",
+      "error": "HTTPError"
     }
   ],
   "post_count": 11,
-  "fetched": "2026-05-17T20:48:52Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
