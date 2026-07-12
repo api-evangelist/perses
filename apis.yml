@@ -45,6 +45,8 @@ apis:
       - type: GitHub
         url: https://github.com/perses/perses
 common:
+  - type: DomainSecurity
+    url: security/perses-domain-security.yml
   - type: Website
     url: https://perses.dev/
   - type: Documentation
