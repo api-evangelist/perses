@@ -45,6 +45,8 @@ apis:
       - type: GitHub
         url: https://github.com/perses/perses
 common:
+  - type: AgenticAccess
+    url: agentic-access/perses-agentic-access.yml
   - type: DomainSecurity
     url: security/perses-domain-security.yml
   - type: Website
