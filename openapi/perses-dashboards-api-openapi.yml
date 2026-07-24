@@ -1,0 +1,169 @@
+openapi: 3.1.0
+info:
+  title: Perses Dashboards API
+  description: 'Perses is an open-source monitoring and dashboarding tool (CNCF sandbox)
+
+    that exposes a REST API for managing dashboards, datasources, and
+
+    projects, among other resources. All resources live under the
+
+    /api/v1 prefix; project-scoped resources are nested under
+
+    /api/v1/projects/{projectName}.
+
+
+    Only a representative subset of the Perses API surface (projects,
+
+    dashboards, datasources, global datasources) is modeled here. See the
+
+    Perses documentation linked under externalDocs for the full catalog
+
+    including users, roles, secrets, variables, and plugins.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Perses documentation
+    url: https://perses.dev/perses/docs/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://{persesHost}
+  description: Perses server.
+  variables:
+    persesHost:
+      default: localhost:8080
+      description: Host and port of the Perses server.
+tags:
+- name: Dashboards
+  description: Manage dashboards inside a project.
+paths:
+  /api/v1/projects/{projectName}/dashboards:
+    parameters:
+    - in: path
+      name: projectName
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Dashboards
+      summary: List dashboards in a project
+      operationId: listDashboards
+      parameters:
+      - in: query
+        name: name
+        schema:
+          type: string
+        description: Optional name prefix filter.
+      responses:
+        '200':
+          description: Array of dashboards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dashboard'
+    post:
+      tags:
+      - Dashboards
+      summary: Create a dashboard
+      operationId: createDashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard'
+      responses:
+        '200':
+          description: Dashboard created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+  /api/v1/projects/{projectName}/dashboards/{dashboardName}:
+    parameters:
+    - in: path
+      name: projectName
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: dashboardName
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Dashboards
+      summary: Get a dashboard
+      operationId: getDashboard
+      responses:
+        '200':
+          description: Dashboard.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+    put:
+      tags:
+      - Dashboards
+      summary: Update a dashboard
+      operationId: updateDashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard'
+      responses:
+        '200':
+          description: Dashboard updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+    delete:
+      tags:
+      - Dashboards
+      summary: Delete a dashboard
+      operationId: deleteDashboard
+      responses:
+        '204':
+          description: Dashboard removed.
+components:
+  schemas:
+    Dashboard:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+          - Dashboard
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        spec:
+          type: object
+          additionalProperties: true
+          description: Dashboard specification including panels and layouts.
+    Metadata:
+      type: object
+      properties:
+        name:
+          type: string
+        project:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        version:
+          type: integer
+externalDocs:
+  description: Perses API reference
+  url: https://perses.dev/perses/docs/api/

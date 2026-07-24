@@ -1,0 +1,166 @@
+openapi: 3.1.0
+info:
+  title: Perses Dashboards Projects API
+  description: 'Perses is an open-source monitoring and dashboarding tool (CNCF sandbox)
+
+    that exposes a REST API for managing dashboards, datasources, and
+
+    projects, among other resources. All resources live under the
+
+    /api/v1 prefix; project-scoped resources are nested under
+
+    /api/v1/projects/{projectName}.
+
+
+    Only a representative subset of the Perses API surface (projects,
+
+    dashboards, datasources, global datasources) is modeled here. See the
+
+    Perses documentation linked under externalDocs for the full catalog
+
+    including users, roles, secrets, variables, and plugins.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Perses documentation
+    url: https://perses.dev/perses/docs/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://{persesHost}
+  description: Perses server.
+  variables:
+    persesHost:
+      default: localhost:8080
+      description: Host and port of the Perses server.
+tags:
+- name: Projects
+  description: Manage Perses projects (workspaces).
+paths:
+  /api/v1/projects:
+    get:
+      tags:
+      - Projects
+      summary: List projects
+      operationId: listProjects
+      parameters:
+      - in: query
+        name: name
+        schema:
+          type: string
+        description: Optional name prefix filter.
+      responses:
+        '200':
+          description: A list of projects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+    post:
+      tags:
+      - Projects
+      summary: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '200':
+          description: Project created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+  /api/v1/projects/{name}:
+    parameters:
+    - in: path
+      name: name
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Projects
+      summary: Get a project by name
+      operationId: getProject
+      responses:
+        '200':
+          description: Project.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '404':
+          description: Project not found.
+    put:
+      tags:
+      - Projects
+      summary: Update a project
+      operationId: updateProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '200':
+          description: Project updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+    delete:
+      tags:
+      - Projects
+      summary: Delete a project
+      operationId: deleteProject
+      responses:
+        '204':
+          description: Project removed.
+components:
+  schemas:
+    Project:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+          - Project
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        spec:
+          type: object
+          properties:
+            display:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+    Metadata:
+      type: object
+      properties:
+        name:
+          type: string
+        project:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        version:
+          type: integer
+externalDocs:
+  description: Perses API reference
+  url: https://perses.dev/perses/docs/api/
