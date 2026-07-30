@@ -8,9 +8,21 @@ description: >-
   role bindings, secrets, users, variables, plugins, validation, and
   migrations. It is a CNCF sandbox project.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Producer
 access: Open Source
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/perses.png
 tags:
   - CNCF
   - Dashboards
@@ -25,25 +37,60 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: perses:perses
-    name: Perses API
-    description: >-
-      The Perses REST API provides programmatic access to dashboards,
-      datasources, ephemeral dashboards, projects, roles, role bindings,
-      secrets, users, variables, plugins, validation, and migration resources
-      for the Perses monitoring and dashboarding platform.
-    humanURL: https://perses.dev/
-    tags:
-      - Dashboards
-      - Monitoring
-      - Observability
-    properties:
-      - type: Documentation
-        url: https://perses.dev/perses/docs/
-      - type: APIReference
-        url: https://perses.dev/perses/docs/api/
-      - type: GitHub
-        url: https://github.com/perses/perses
+- aid: perses:perses
+  name: Perses API
+  description: >-
+    The Perses REST API provides programmatic access to dashboards, datasources, ephemeral dashboards,
+    projects, roles, role bindings, secrets, users, variables, plugins, validation, and migration resources
+    for the Perses monitoring and dashboarding platform.
+  humanURL: https://perses.dev/
+  tags:
+  - Dashboards
+  - Monitoring
+  - Observability
+  properties:
+  - type: Documentation
+    url: https://perses.dev/perses/docs/
+  - type: APIReference
+    url: https://perses.dev/perses/docs/api/
+  - type: GitHub
+    url: https://github.com/perses/perses
+- aid: perses:perses-dashboards-api
+  name: Perses Dashboards API
+  description: Manage dashboards inside a project.
+  humanURL: https://perses.dev/
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/perses-dashboards-api-openapi.yml
+- aid: perses:perses-datasources-api
+  name: Perses Datasources API
+  description: Manage project-scoped datasources.
+  humanURL: https://perses.dev/
+  tags:
+  - Datasources
+  properties:
+  - type: OpenAPI
+    url: openapi/perses-datasources-api-openapi.yml
+- aid: perses:perses-global-datasources-api
+  name: Perses Global Datasources API
+  description: Manage shared datasources across projects.
+  humanURL: https://perses.dev/
+  tags:
+  - Global Datasources
+  properties:
+  - type: OpenAPI
+    url: openapi/perses-global-datasources-api-openapi.yml
+- aid: perses:perses-projects-api
+  name: Perses Projects API
+  description: Manage Perses projects (workspaces).
+  humanURL: https://perses.dev/
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/perses-projects-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/perses-agentic-access.yml
