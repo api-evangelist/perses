@@ -1,0 +1,20 @@
+{
+  "provider": "perses",
+  "sources": [
+    "perses-dashboards-api-openapi.yml",
+    "perses-datasources-api-openapi.yml",
+    "perses-global-datasources-api-openapi.yml",
+    "perses-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "perses-dashboards-api-openapi.yml",
+    "perses-datasources-api-openapi.yml",
+    "perses-global-datasources-api-openapi.yml",
+    "perses-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

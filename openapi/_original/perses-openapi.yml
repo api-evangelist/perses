@@ -1,0 +1,462 @@
+openapi: 3.1.0
+info:
+  title: Perses API
+  description: |
+    Perses is an open-source monitoring and dashboarding tool (CNCF sandbox)
+    that exposes a REST API for managing dashboards, datasources, and
+    projects, among other resources. All resources live under the
+    /api/v1 prefix; project-scoped resources are nested under
+    /api/v1/projects/{projectName}.
+
+    Only a representative subset of the Perses API surface (projects,
+    dashboards, datasources, global datasources) is modeled here. See the
+    Perses documentation linked under externalDocs for the full catalog
+    including users, roles, secrets, variables, and plugins.
+  version: "1.0.0"
+  contact:
+    name: Perses documentation
+    url: https://perses.dev/perses/docs/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: Perses API reference
+  url: https://perses.dev/perses/docs/api/
+servers:
+  - url: http://{persesHost}
+    description: Perses server.
+    variables:
+      persesHost:
+        default: localhost:8080
+        description: Host and port of the Perses server.
+tags:
+  - name: Projects
+    description: Manage Perses projects (workspaces).
+  - name: Dashboards
+    description: Manage dashboards inside a project.
+  - name: Datasources
+    description: Manage project-scoped datasources.
+  - name: Global Datasources
+    description: Manage shared datasources across projects.
+paths:
+  /api/v1/projects:
+    get:
+      tags: [Projects]
+      summary: List projects
+      operationId: listProjects
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Optional name prefix filter.
+      responses:
+        "200":
+          description: A list of projects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Project"
+    post:
+      tags: [Projects]
+      summary: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Project"
+      responses:
+        "200":
+          description: Project created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+
+  /api/v1/projects/{name}:
+    parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Projects]
+      summary: Get a project by name
+      operationId: getProject
+      responses:
+        "200":
+          description: Project.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+        "404":
+          description: Project not found.
+    put:
+      tags: [Projects]
+      summary: Update a project
+      operationId: updateProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Project"
+      responses:
+        "200":
+          description: Project updated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+    delete:
+      tags: [Projects]
+      summary: Delete a project
+      operationId: deleteProject
+      responses:
+        "204":
+          description: Project removed.
+
+  /api/v1/projects/{projectName}/dashboards:
+    parameters:
+      - in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Dashboards]
+      summary: List dashboards in a project
+      operationId: listDashboards
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Optional name prefix filter.
+      responses:
+        "200":
+          description: Array of dashboards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Dashboard"
+    post:
+      tags: [Dashboards]
+      summary: Create a dashboard
+      operationId: createDashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Dashboard"
+      responses:
+        "200":
+          description: Dashboard created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Dashboard"
+
+  /api/v1/projects/{projectName}/dashboards/{dashboardName}:
+    parameters:
+      - in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: dashboardName
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Dashboards]
+      summary: Get a dashboard
+      operationId: getDashboard
+      responses:
+        "200":
+          description: Dashboard.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Dashboard"
+    put:
+      tags: [Dashboards]
+      summary: Update a dashboard
+      operationId: updateDashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Dashboard"
+      responses:
+        "200":
+          description: Dashboard updated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Dashboard"
+    delete:
+      tags: [Dashboards]
+      summary: Delete a dashboard
+      operationId: deleteDashboard
+      responses:
+        "204":
+          description: Dashboard removed.
+
+  /api/v1/projects/{projectName}/datasources:
+    parameters:
+      - in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Datasources]
+      summary: List project datasources
+      operationId: listDatasources
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+        - in: query
+          name: kind
+          schema:
+            type: string
+        - in: query
+          name: default
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Array of datasources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Datasource"
+    post:
+      tags: [Datasources]
+      summary: Create a project datasource
+      operationId: createDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Datasource"
+      responses:
+        "200":
+          description: Datasource created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+
+  /api/v1/projects/{projectName}/datasources/{datasourceName}:
+    parameters:
+      - in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: datasourceName
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Datasources]
+      summary: Get a project datasource
+      operationId: getDatasource
+      responses:
+        "200":
+          description: Datasource.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+    put:
+      tags: [Datasources]
+      summary: Update a project datasource
+      operationId: updateDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Datasource"
+      responses:
+        "200":
+          description: Datasource updated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+    delete:
+      tags: [Datasources]
+      summary: Delete a project datasource
+      operationId: deleteDatasource
+      responses:
+        "204":
+          description: Datasource removed.
+
+  /api/v1/globaldatasources:
+    get:
+      tags: [Global Datasources]
+      summary: List global datasources
+      operationId: listGlobalDatasources
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+        - in: query
+          name: kind
+          schema:
+            type: string
+        - in: query
+          name: default
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Array of global datasources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Datasource"
+    post:
+      tags: [Global Datasources]
+      summary: Create a global datasource
+      operationId: createGlobalDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Datasource"
+      responses:
+        "200":
+          description: Global datasource created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+
+  /api/v1/globaldatasources/{name}:
+    parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Global Datasources]
+      summary: Get a global datasource
+      operationId: getGlobalDatasource
+      responses:
+        "200":
+          description: Global datasource.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+    put:
+      tags: [Global Datasources]
+      summary: Update a global datasource
+      operationId: updateGlobalDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Datasource"
+      responses:
+        "200":
+          description: Global datasource updated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Datasource"
+    delete:
+      tags: [Global Datasources]
+      summary: Delete a global datasource
+      operationId: deleteGlobalDatasource
+      responses:
+        "204":
+          description: Global datasource removed.
+
+components:
+  schemas:
+    Metadata:
+      type: object
+      properties:
+        name:
+          type: string
+        project:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        version:
+          type: integer
+    Project:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [Project]
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        spec:
+          type: object
+          properties:
+            display:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+    Dashboard:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [Dashboard]
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        spec:
+          type: object
+          additionalProperties: true
+          description: Dashboard specification including panels and layouts.
+    Datasource:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [Datasource, GlobalDatasource]
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        spec:
+          type: object
+          additionalProperties: true
+          description: Datasource specification including plugin kind and config.
