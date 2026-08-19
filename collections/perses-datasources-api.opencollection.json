@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perses Dashboards Datasources API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Datasources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List project datasources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{persesHost}/api/v1/projects/:projectName/datasources",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "default",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List project datasources"
+        },
+        {
+          "info": {
+            "name": "Create a project datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{persesHost}/api/v1/projects/:projectName/datasources",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a project datasource"
+        },
+        {
+          "info": {
+            "name": "Get a project datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{persesHost}/api/v1/projects/:projectName/datasources/:datasourceName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "datasourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a project datasource"
+        },
+        {
+          "info": {
+            "name": "Update a project datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{persesHost}/api/v1/projects/:projectName/datasources/:datasourceName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "datasourceName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a project datasource"
+        },
+        {
+          "info": {
+            "name": "Delete a project datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{persesHost}/api/v1/projects/:projectName/datasources/:datasourceName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "datasourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a project datasource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

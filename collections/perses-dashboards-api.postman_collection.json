@@ -1,0 +1,646 @@
+{
+  "item": [
+    {
+      "id": "3ad2403a-113a-4c91-91f5-3fd4804fc114",
+      "name": "Dashboards",
+      "description": {
+        "content": "Manage dashboards inside a project.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ac6463f2-5653-4854-aacd-8d8f4dc0d24e",
+          "name": "List dashboards in a project",
+          "request": {
+            "name": "List dashboards in a project",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":projectName",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Optional name prefix filter."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82088e73-c300-4256-9006-cf568368a13d",
+              "name": "Array of dashboards.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":projectName",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"kind\": \"Dashboard\",\n    \"metadata\": {\n      \"name\": \"string\",\n      \"project\": \"string\",\n      \"createdAt\": \"1958-06-15T15:26:48.604Z\",\n      \"updatedAt\": \"1994-07-07T15:35:12.582Z\",\n      \"version\": 4656\n    },\n    \"spec\": {\n      \"key_0\": 3491,\n      \"key_1\": 4839.706487926571,\n      \"key_2\": 8147.136936485207,\n      \"key_3\": 2934.7586941253635\n    }\n  },\n  {\n    \"kind\": \"Dashboard\",\n    \"metadata\": {\n      \"name\": \"string\",\n      \"project\": \"string\",\n      \"createdAt\": \"2024-01-07T23:57:35.377Z\",\n      \"updatedAt\": \"2012-11-17T13:35:22.934Z\",\n      \"version\": 2517\n    },\n    \"spec\": {\n      \"key_0\": \"string\",\n      \"key_1\": 198.84312125327486,\n      \"key_2\": 1939.3884761989611\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c7784c4-e90e-4821-934a-2059035fda4e",
+          "name": "Create a dashboard",
+          "request": {
+            "name": "Create a dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":projectName",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"project\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"version\": \"<integer>\"\n  },\n  \"spec\": {\n    \"key_0\": false\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3d4c6d0d-9324-42ba-8467-350300c366a5",
+              "name": "Dashboard created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":projectName",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1993-02-22T17:09:27.171Z\",\n    \"updatedAt\": \"1987-04-13T01:57:47.964Z\",\n    \"version\": 9386\n  },\n  \"spec\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": 5467\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"Dashboard\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1951-05-03T21:50:31.106Z\",\n    \"updatedAt\": \"1947-06-09T12:14:59.208Z\",\n    \"version\": 9179\n  },\n  \"spec\": {\n    \"key_0\": 5169.1332117840075,\n    \"key_1\": true,\n    \"key_2\": 9702.49254669613\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbfceebd-56ff-4f2b-b9b1-4eee7a3efb47",
+          "name": "Get a dashboard",
+          "request": {
+            "name": "Get a dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":projectName",
+                "dashboards",
+                ":dashboardName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dashboardName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17207bec-3061-4f32-9ff1-030ac3907cfd",
+              "name": "Dashboard.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":projectName",
+                    "dashboards",
+                    ":dashboardName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dashboardName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"Dashboard\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1951-05-03T21:50:31.106Z\",\n    \"updatedAt\": \"1947-06-09T12:14:59.208Z\",\n    \"version\": 9179\n  },\n  \"spec\": {\n    \"key_0\": 5169.1332117840075,\n    \"key_1\": true,\n    \"key_2\": 9702.49254669613\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a79312c-100e-449c-9922-9c95a86a450e",
+          "name": "Update a dashboard",
+          "request": {
+            "name": "Update a dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":projectName",
+                "dashboards",
+                ":dashboardName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dashboardName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"project\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"version\": \"<integer>\"\n  },\n  \"spec\": {\n    \"key_0\": false\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "255b43b7-b4d2-458c-ab62-25e373a6b19f",
+              "name": "Dashboard updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":projectName",
+                    "dashboards",
+                    ":dashboardName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dashboardName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1993-02-22T17:09:27.171Z\",\n    \"updatedAt\": \"1987-04-13T01:57:47.964Z\",\n    \"version\": 9386\n  },\n  \"spec\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": 5467\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"Dashboard\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1951-05-03T21:50:31.106Z\",\n    \"updatedAt\": \"1947-06-09T12:14:59.208Z\",\n    \"version\": 9179\n  },\n  \"spec\": {\n    \"key_0\": 5169.1332117840075,\n    \"key_1\": true,\n    \"key_2\": 9702.49254669613\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d555cf81-6535-49ae-a0fe-b7c3d91dca40",
+          "name": "Delete a dashboard",
+          "request": {
+            "name": "Delete a dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":projectName",
+                "dashboards",
+                ":dashboardName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dashboardName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a87af5f-6ada-4955-a1a5-b79bf7887a99",
+              "name": "Dashboard removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":projectName",
+                    "dashboards",
+                    ":dashboardName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dashboardName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Host and port of the Perses server.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "persesHost"
+    },
+    {
+      "type": "string",
+      "value": "http://{{persesHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6967122a-676a-4b12-b745-81605222c073",
+    "name": "Perses Dashboards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perses is an open-source monitoring and dashboarding tool (CNCF sandbox)\nthat exposes a REST API for managing dashboards, datasources, and\nprojects, among other resources. All resources live under the\n/api/v1 prefix; project-scoped resources are nested under\n/api/v1/projects/{projectName}.\n\nOnly a representative subset of the Perses API surface (projects,\ndashboards, datasources, global datasources) is modeled here. See the\nPerses documentation linked under externalDocs for the full catalog\nincluding users, roles, secrets, variables, and plugins.\n\n\nContact Support:\n Name: Perses documentation",
+      "type": "text/plain"
+    }
+  }
+}

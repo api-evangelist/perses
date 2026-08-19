@@ -1,0 +1,573 @@
+{
+  "item": [
+    {
+      "id": "041e5cde-7563-4760-89f1-0a765cf78c1a",
+      "name": "Global Datasources",
+      "description": {
+        "content": "Manage shared datasources across projects.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1404a93-e7c6-4c5c-80ac-ca31e00a97fc",
+          "name": "List global datasources",
+          "request": {
+            "name": "List global datasources",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "globaldatasources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kind",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "default",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a906523f-1ae6-41a5-abdd-4a00b9e75923",
+              "name": "Array of global datasources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "globaldatasources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "kind",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "default",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"kind\": \"Datasource\",\n    \"metadata\": {\n      \"name\": \"string\",\n      \"project\": \"string\",\n      \"createdAt\": \"1958-04-07T22:03:04.119Z\",\n      \"updatedAt\": \"2022-01-19T11:31:44.334Z\",\n      \"version\": 3378\n    },\n    \"spec\": {\n      \"key_0\": true\n    }\n  },\n  {\n    \"kind\": \"GlobalDatasource\",\n    \"metadata\": {\n      \"name\": \"string\",\n      \"project\": \"string\",\n      \"createdAt\": \"1996-08-25T13:31:15.964Z\",\n      \"updatedAt\": \"1952-09-02T03:10:50.450Z\",\n      \"version\": 2925\n    },\n    \"spec\": {\n      \"key_0\": true,\n      \"key_1\": 4263.907695180164,\n      \"key_2\": true,\n      \"key_3\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fae8acb9-ed19-4276-bf8b-9a5cd858aea2",
+          "name": "Create a global datasource",
+          "request": {
+            "name": "Create a global datasource",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "globaldatasources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"project\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"version\": \"<integer>\"\n  },\n  \"spec\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "165c30d4-d261-46d7-adea-c64c4c91629e",
+              "name": "Global datasource created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "globaldatasources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"2019-08-13T04:50:00.137Z\",\n    \"updatedAt\": \"2004-10-11T20:21:24.272Z\",\n    \"version\": 4489\n  },\n  \"spec\": {\n    \"key_0\": false,\n    \"key_1\": true,\n    \"key_2\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"GlobalDatasource\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1980-03-19T21:49:06.673Z\",\n    \"updatedAt\": \"2019-05-03T05:32:09.508Z\",\n    \"version\": 1537\n  },\n  \"spec\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": 955\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1b213a2-645f-4aaa-9807-353afb9981ff",
+          "name": "Get a global datasource",
+          "request": {
+            "name": "Get a global datasource",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "globaldatasources",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d0b3d3f-2003-44d3-bf81-683cee0d1612",
+              "name": "Global datasource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "globaldatasources",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"GlobalDatasource\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1980-03-19T21:49:06.673Z\",\n    \"updatedAt\": \"2019-05-03T05:32:09.508Z\",\n    \"version\": 1537\n  },\n  \"spec\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": 955\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cc3aa4c-b059-431d-9b46-242a5185ca43",
+          "name": "Update a global datasource",
+          "request": {
+            "name": "Update a global datasource",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "globaldatasources",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"project\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"version\": \"<integer>\"\n  },\n  \"spec\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3aea13fb-2eea-4e21-ade4-e345fd453cf5",
+              "name": "Global datasource updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "globaldatasources",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"2019-08-13T04:50:00.137Z\",\n    \"updatedAt\": \"2004-10-11T20:21:24.272Z\",\n    \"version\": 4489\n  },\n  \"spec\": {\n    \"key_0\": false,\n    \"key_1\": true,\n    \"key_2\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"GlobalDatasource\",\n  \"metadata\": {\n    \"name\": \"string\",\n    \"project\": \"string\",\n    \"createdAt\": \"1980-03-19T21:49:06.673Z\",\n    \"updatedAt\": \"2019-05-03T05:32:09.508Z\",\n    \"version\": 1537\n  },\n  \"spec\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": 955\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc9239a0-3c4b-43df-8696-0f08bb77e509",
+          "name": "Delete a global datasource",
+          "request": {
+            "name": "Delete a global datasource",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "globaldatasources",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Host and port of the Perses server.",
+                  "type": "any",
+                  "value": "{{persesHost}}",
+                  "key": "persesHost"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3c6da35-1a7f-4a69-b774-ac5684d9641b",
+              "name": "Global datasource removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "globaldatasources",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Host and port of the Perses server.",
+                      "type": "any",
+                      "value": "{{persesHost}}",
+                      "key": "persesHost"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Host and port of the Perses server.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "persesHost"
+    },
+    {
+      "type": "string",
+      "value": "http://{{persesHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ef9131f6-bd98-4eb1-9a5e-99c164303f97",
+    "name": "Perses Dashboards Global Datasources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perses is an open-source monitoring and dashboarding tool (CNCF sandbox)\nthat exposes a REST API for managing dashboards, datasources, and\nprojects, among other resources. All resources live under the\n/api/v1 prefix; project-scoped resources are nested under\n/api/v1/projects/{projectName}.\n\nOnly a representative subset of the Perses API surface (projects,\ndashboards, datasources, global datasources) is modeled here. See the\nPerses documentation linked under externalDocs for the full catalog\nincluding users, roles, secrets, variables, and plugins.\n\n\nContact Support:\n Name: Perses documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perses Dashboards Global Datasources API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Global Datasources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List global datasources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{persesHost}/api/v1/globaldatasources",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "default",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List global datasources"
+        },
+        {
+          "info": {
+            "name": "Create a global datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{persesHost}/api/v1/globaldatasources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a global datasource"
+        },
+        {
+          "info": {
+            "name": "Get a global datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{persesHost}/api/v1/globaldatasources/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a global datasource"
+        },
+        {
+          "info": {
+            "name": "Update a global datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{persesHost}/api/v1/globaldatasources/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a global datasource"
+        },
+        {
+          "info": {
+            "name": "Delete a global datasource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{persesHost}/api/v1/globaldatasources/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a global datasource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
