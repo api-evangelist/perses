@@ -28,6 +28,14 @@ tags:
   - Dashboards
   - Monitoring
   - Observability
+  - Open-Source
+  - Time Series
+  - Visualization
+tags_raw:
+  - CNCF
+  - Dashboards
+  - Monitoring
+  - Observability
   - Open Source
   - Time Series
   - Visualization
@@ -69,6 +77,8 @@ apis:
   description: Manage project-scoped datasources.
   humanURL: https://perses.dev/
   tags:
+  - Data Sources
+  tags_raw:
   - Datasources
   properties:
   - type: OpenAPI
@@ -87,6 +97,8 @@ apis:
   description: Manage Perses projects (workspaces).
   humanURL: https://perses.dev/
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
