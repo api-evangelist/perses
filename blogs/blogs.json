@@ -2,14 +2,10 @@
   "repo": "perses",
   "feeds": [
     {
-      "source": "https://perses.dev/feed_rss_created.xml",
-      "error": "URLError"
-    },
-    {
       "source": "https://perses.dev/community/",
-      "error": "URLError"
+      "error": "HTTPError"
     }
   ],
   "post_count": 12,
-  "fetched": "2026-08-06T14:08:46Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
