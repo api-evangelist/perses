@@ -83,17 +83,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/perses-dashboards-api-openapi.yml
-- aid: perses:perses-datasources-api
-  name: Perses Datasources API
-  description: Manage project-scoped datasources.
-  humanURL: https://perses.dev/
-  tags:
-  - Data Sources
-  tags_raw:
-  - Datasources
-  properties:
-  - type: OpenAPI
-    url: openapi/perses-datasources-api-openapi.yml
 - aid: perses:perses-global-datasources-api
   name: Perses Global Datasources API
   description: Manage shared datasources across projects.
@@ -114,6 +103,15 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/perses-projects-api-openapi.yml
+- aid: perses:perses-data-sources-api
+  name: Perses Data Sources API
+  description: Manage project-scoped datasources.
+  humanURL: https://perses.dev/
+  tags:
+  - Data Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/perses-data-sources-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/perses-agentic-access.yml
