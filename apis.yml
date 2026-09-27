@@ -9,15 +9,21 @@ description: >-
   migrations. It is a CNCF sandbox project.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: false
+  model: self-hosted
+  license: Apache-2.0
+  license_evidence:
+    repo: perses/perses
+    spdx: Apache-2.0
+    stars: 2453
+  open_source: true
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
   - openapi
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -39,7 +45,7 @@ tags:
   - Dashboards
   - Monitoring
   - Observability
-  - Open-Source
+  - Open Source
   - Time Series
   - Visualization
 tags_raw:
@@ -50,6 +56,7 @@ tags_raw:
   - Open Source
   - Time Series
   - Visualization
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/perses/refs/heads/main/apis.yml
 created: '2026-03-16'
