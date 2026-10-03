@@ -121,6 +121,19 @@ paths:
           description: Dashboard removed.
 components:
   schemas:
+    Dashboard:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+          - Dashboard
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        spec:
+          type: object
+          additionalProperties: true
+          description: Dashboard specification including panels and layouts.
     Metadata:
       type: object
       properties:
@@ -136,19 +149,6 @@ components:
           format: date-time
         version:
           type: integer
-    Dashboard:
-      type: object
-      properties:
-        kind:
-          type: string
-          enum:
-          - Dashboard
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-        spec:
-          type: object
-          additionalProperties: true
-          description: Dashboard specification including panels and layouts.
 externalDocs:
   description: Perses API reference
   url: https://perses.dev/perses/docs/api/
