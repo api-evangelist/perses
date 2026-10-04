@@ -112,21 +112,6 @@ paths:
           description: Project removed.
 components:
   schemas:
-    Metadata:
-      type: object
-      properties:
-        name:
-          type: string
-        project:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        version:
-          type: integer
     Project:
       type: object
       properties:
@@ -146,6 +131,21 @@ components:
                   type: string
                 description:
                   type: string
+    Metadata:
+      type: object
+      properties:
+        name:
+          type: string
+        project:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        version:
+          type: integer
 externalDocs:
   description: Perses API reference
   url: https://perses.dev/perses/docs/api/
