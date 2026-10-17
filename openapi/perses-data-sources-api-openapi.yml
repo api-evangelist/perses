@@ -128,6 +128,20 @@ paths:
           description: Datasource removed.
 components:
   schemas:
+    Datasource:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+          - Datasource
+          - GlobalDatasource
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        spec:
+          type: object
+          additionalProperties: true
+          description: Datasource specification including plugin kind and config.
     Metadata:
       type: object
       properties:
@@ -143,20 +157,6 @@ components:
           format: date-time
         version:
           type: integer
-    Datasource:
-      type: object
-      properties:
-        kind:
-          type: string
-          enum:
-          - Datasource
-          - GlobalDatasource
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-        spec:
-          type: object
-          additionalProperties: true
-          description: Datasource specification including plugin kind and config.
 externalDocs:
   description: Perses API reference
   url: https://perses.dev/perses/docs/api/
