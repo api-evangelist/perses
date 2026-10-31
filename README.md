@@ -1,4 +1,4 @@
-# Perses (perses)
+# Perses
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,129 @@
 
 Perses is an open-source monitoring and dashboarding tool designed as a modern alternative for visualizing time-series data with a focus on performance, extensibility, and GitOps. Perses exposes a REST API for managing dashboards, datasources, ephemeral dashboards, projects, roles, role bindings, secrets, users, variables, plugins, validation, and migrations. It is a CNCF sandbox project.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/perses/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/perses/refs/heads/main/apis.yml)
+**Areas:** CNCF · Dashboards · Monitoring · Observability · Open Source · Time Series · Visualization
 
-## Scope
+## Perses on APIs.io
 
-- **Type:** Index
-- **Position:** Producer
-- **Access:** Open Source
+Everything profiled for Perses is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/perses/](https://apis.io/providers/perses/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- CNCF
-- Dashboards
-- Monitoring
-- Observability
-- Open Source
-- Time Series
-- Visualization
+- [Perses API](https://apis.io/apis/perses/perses/) — The Perses REST API provides programmatic access to dashboards, datasources, ephemeral dashboards, projects, roles, role bindings, secrets, users,…
+- [Perses Dashboards API](https://apis.io/apis/perses/perses-dashboards-api/) — Manage dashboards inside a project.
+- [Perses Global Datasources API](https://apis.io/apis/perses/perses-global-datasources-api/) — Manage shared datasources across projects.
+- [Perses Projects API](https://apis.io/apis/perses/perses-projects-api/) — Manage Perses projects (workspaces).
+- [Perses Data Sources API](https://apis.io/apis/perses/perses-data-sources-api/) — Manage project-scoped datasources.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Perses API
+Model Context Protocol servers that expose the API to agents.
 
-The Perses REST API provides programmatic access to dashboards, datasources, ephemeral dashboards, projects, roles, role bindings, secrets, users, variables, plugins, validation, and migration resources for the Perses monitoring and dashboarding platform.
+- [MCP Server](https://apis.io/servers/perses/mcp-server/)
 
-- **Human URL:** [https://perses.dev/](https://perses.dev/)
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Dashboards
-- Monitoring
-- Observability
+- [Perses Agentic Access](https://apis.io/agentic-access/perses/perses-agentic-access/)
 
-#### Properties
+#### Collections (5)
 
-- [Documentation](https://perses.dev/perses/docs/)
-- [API Reference](https://perses.dev/perses/docs/api/)
-- [Git Hub](https://github.com/perses/perses)
-- [Postman Collection](collections/perses.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/perses.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Perses API](https://apis.io/collections/perses/open-perses/)
+- [Perses Dashboards API](https://apis.io/collections/perses/open-perses-dashboards-api/)
+- [Perses Dashboards Datasources API](https://apis.io/collections/perses/open-perses-datasources-api/)
+- [Perses Dashboards Global Datasources API](https://apis.io/collections/perses/open-perses-global-datasources-api/)
+- [Perses Dashboards Projects API](https://apis.io/collections/perses/open-perses-projects-api/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Perses Domain Security](https://apis.io/security/perses/perses-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Perses Plans Pricing](https://apis.io/plans/perses/perses-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Perses Rate Limits](https://apis.io/rate-limits/perses/perses-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Perses Finops](https://apis.io/finops/perses/perses-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://perses.dev/)
 - [Documentation](https://perses.dev/perses/docs/)
-- [API Reference](https://perses.dev/perses/docs/api/)
-- [GitHub Organization](https://github.com/perses)
-- [Git Hub](https://github.com/perses/perses)
-- [Community](https://perses.dev/community/)
+- [API reference](https://perses.dev/perses/docs/api/)
 - [Blog](https://perses.dev/blog/)
-- [M C P Server](https://github.com/perses/mcp-server)
+- [GitHub](https://github.com/perses)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 21.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.7 |
+| Contract quality | 41.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 18.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/perses/](https://apis.io/providers/perses/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Perses: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/perses/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
